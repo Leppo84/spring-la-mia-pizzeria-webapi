@@ -26,6 +26,30 @@
 		</div>
 	</main>
 	<div th:replace="~{fragments :: script}"></div>
+	<div>
+		<h3>Offerte:</h3>
+		<p th:if="${pizza.offers.size()==0}">non ci sono offerte attive</p>
+		<div class="col-12">
+			<table th:if="${pizza.offers.size()>0}" class="table">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>Inizio</td>
+						<td>Fine offerta</td>
+						<td>Nome</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="offer : ${pizza.offers}">
+						<td th:text="${offer.id}"></td>
+						<td th:text="${#temporals.format(offer.offerBeginDate,'dd/MM/yyyy')}"></td>
+						<td th:text="${#temporals.format(offer.offerEndDate,'dd/MM/yyyy')}"></td>
+						<td th:text="${offer.title}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+	</div>
 </body>
 
 </html>

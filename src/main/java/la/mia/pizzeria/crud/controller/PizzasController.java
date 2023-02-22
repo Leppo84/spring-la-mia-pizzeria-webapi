@@ -73,7 +73,7 @@ public class PizzasController {
 	public String singlePizza(@PathVariable("id") Integer id, Model model) {
 		Pizza detailPizza = PizzaRepository.getReferenceById(id);
 		
-//			return "redirect:/index";
+//		System.out.println(detailPizza.getOffers().get(1).getOfferBeginDate());
 
 		model.addAttribute("pizza", detailPizza);
 

@@ -1,9 +1,12 @@
 package la.mia.pizzeria.crud.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -33,7 +36,10 @@ public class Pizza {
 //	@NotEmpty(message="Prezzo non valido!")
 	private Double price;
 
-
+	@OneToMany(mappedBy = "pizza")
+	private List<Offer> offers;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -73,6 +79,15 @@ public class Pizza {
 	public void setId(Integer id) {
 		this.id = id;
 	}	
+	
+	public List<Offer> getOffers() {
+		return offers;
+		
+	}
+	public void setOffers(List<Offer> offers) {
+		this.offers = offers;
+	}
+	
 	
 	
 	
