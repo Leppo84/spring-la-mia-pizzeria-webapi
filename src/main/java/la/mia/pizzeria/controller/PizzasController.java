@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
+import la.mia.pizzeria.model.Ingredient;
 import la.mia.pizzeria.model.Pizza;
+import la.mia.pizzeria.repository.IngredientRepository;
 import la.mia.pizzeria.repository.PizzaRepository;
 
 @Controller
@@ -23,6 +25,9 @@ public class PizzasController {
 
 	@Autowired
 	PizzaRepository PizzaRepository;
+	
+	@Autowired
+	IngredientRepository IngredientRepository;
 	
 //	@GetMapping
 //	public String index(Model model) {
@@ -84,11 +89,15 @@ public class PizzasController {
 	@GetMapping("/edit/{id}")		//richieste GET del tipo /edit/xx
 	public String edit(@PathVariable("id") Integer id, Model model) {		
 		Pizza pizza=PizzaRepository.getReferenceById(id);  //lo recupero dal DB
+
+		List<Ingredient> elencoIngredienti=IngredientRepository.findAll();
 		
 		model.addAttribute("pizza", pizza);
+		model.addAttribute("elencoIngredienti", elencoIngredienti);
+		model.addAttribute("edit", true);
 		return "/edit";
 	}
-	
+		
 	@PostMapping("/edit/{id}")		//richieste POST del tipo /edit/n
 	public String update(
 			@Valid @ModelAttribute Pizza formPizza,
@@ -100,10 +109,9 @@ public class PizzasController {
 		
 //		if (PizzaRepository.findByName(formPizza.getName()).size()>0)
 //			System.out.println("Pizza già esistente");
+		
 		else
 			PizzaRepository.save(formPizza);
-		
-		
 		
 		return "redirect:/";
 	}

@@ -16,10 +16,10 @@
 		</div>
 	</header>
 	<main class="container">
-<!--		<p th:if="${ingredient.size()==0}">non ci sono ingredienti da mostrare</p>-->
+		<p th:if="${elencoIngredienti.size()==0}">non ci sono ingredienti da mostrare</p>
 		<div class="col-12">
-<!--			<table th:if="${pizza.offers.size()>0}" class="table">-->
-			<table class="table">
+			<table th:if="${elencoIngredienti.size()>0}" class="table">
+<!--			<table class="table">-->
 				<thead>
 					<tr>
 						<td>Id</td>
