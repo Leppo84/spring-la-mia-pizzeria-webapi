@@ -1,4 +1,4 @@
-package la.mia.pizzeria.crud.model;
+package la.mia.pizzeria.model;
 
 import java.time.LocalDate;
 

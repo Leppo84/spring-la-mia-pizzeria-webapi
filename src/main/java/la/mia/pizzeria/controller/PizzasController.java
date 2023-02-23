@@ -1,4 +1,4 @@
-package la.mia.pizzeria.crud.controller;
+package la.mia.pizzeria.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
-import la.mia.pizzeria.crud.model.Pizza;
-import la.mia.pizzeria.crud.repository.PizzaRepository;
+import la.mia.pizzeria.model.Pizza;
+import la.mia.pizzeria.repository.PizzaRepository;
 
 @Controller
 @RequestMapping("/")

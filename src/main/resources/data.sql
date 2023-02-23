@@ -9,3 +9,21 @@ INSERT INTO spring_seconda_pizzeria.pizze(name, description, photo, price) VALUE
 INSERT INTO spring_seconda_pizzeria.pizze(name, description, photo, price) VALUES('Prosciutto e funghi', 'Chella iè', 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg', '8');
 
 INSERT INTO spring_seconda_pizzeria.pizze(name, description, photo, price) VALUES('La Speciale', 'E chi lo sa', 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg', '9.5');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('pomodoro');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('mozzarella');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('prosciutto');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('uova');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('funghi');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('salame piccante');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('gorgonzola');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('cipolla');
+
+INSERT INTO spring_seconda_pizzeria.ingredient(name) VALUES('pancetta');

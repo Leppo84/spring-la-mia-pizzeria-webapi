@@ -1,11 +1,13 @@
-package la.mia.pizzeria.crud.model;
+package la.mia.pizzeria.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
@@ -39,7 +41,18 @@ public class Pizza {
 	@OneToMany(mappedBy = "pizza")
 	private List<Offer> offers;
 	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Ingredient> ingredient;
 	
+
+	public List<Ingredient> getIngredient() {
+		return ingredient;
+	}
+
+	public void setIngredient(List<Ingredient> ingredient) {
+		this.ingredient = ingredient;
+	}
+
 	public String getName() {
 		return name;
 	}

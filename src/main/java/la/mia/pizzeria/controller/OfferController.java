@@ -1,4 +1,4 @@
-package la.mia.pizzeria.crud.controller;
+package la.mia.pizzeria.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
-import la.mia.pizzeria.crud.model.Offer;
-import la.mia.pizzeria.crud.model.Pizza;
-import la.mia.pizzeria.crud.repository.OfferRepository;
-import la.mia.pizzeria.crud.repository.PizzaRepository;
+import la.mia.pizzeria.model.Offer;
+import la.mia.pizzeria.model.Pizza;
+import la.mia.pizzeria.repository.OfferRepository;
+import la.mia.pizzeria.repository.PizzaRepository;
 
 @Controller
 @RequestMapping("/offers")
@@ -50,9 +50,9 @@ public class OfferController {
 	public String store(@Valid @ModelAttribute("offer") Offer formOffer, BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors())
-			return "offer/create";
+			return "offers/create";
 
-		Pizza pizza = formOffer.getPizza();
+//		Pizza pizza = formOffer.getPizza();
 		OfferRepository.save(formOffer);
 
 		return "redirect:/offers"; // genera un altro get
