@@ -2,6 +2,8 @@ package la.mia.pizzeria.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +22,8 @@ public class Ingredient {
 	@NotNull(message="Nome non valido!")
 	@NotEmpty(message="Nome non valido!")
 	private String name;
-
+	
+	@JsonBackReference
 	@ManyToMany(mappedBy = "ingredient")
 	private List<Pizza> pizze;
 	

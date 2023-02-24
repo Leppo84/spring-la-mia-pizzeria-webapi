@@ -22,6 +22,9 @@
 		<div class="col-md-8">
 			<h5 class="">[[${pizza.name}]]</h5>
 			<p class="">[[${pizza.description}]]</p>
+				<h6 th:if="${pizza.ingredient.size()>0}">Ingredienti: </h6>
+					<span class="col-4" th:each="ingredient : ${pizza.ingredient}" th:text="${ingredient.name}"></span>
+					<span> </span>
 			<p class="">[[${pizza.price}]] €</p>
 		</div>
 	</main>
@@ -48,7 +51,7 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>	
+		</div>
 	</div>
 </body>
 
