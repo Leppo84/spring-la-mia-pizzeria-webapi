@@ -11,7 +11,9 @@ function pizzaList() {
 			document.querySelector('#pizza_table').innerHTML += `
             <tr>
 				<td scope="col">${pizza.id}</td>
-				<td scope="col">${pizza.name}</td>
+				<td>
+                    <a href="./show.html?id=${pizza.id}">${pizza.name}</a>
+                </td>
 				<td scope="col">${pizza.description}</td>
 				<td scope="col">${pizza.price}</td>
 				<td scope="col">

@@ -37,7 +37,7 @@ public class ApiPizzasController {
 	}
 	
 	@GetMapping("{id}")
-	public ResponseEntity<Pizza> detail(@PathVariable("id") Integer id) {
+	public ResponseEntity<Pizza> show(@PathVariable("id") Integer id) {
 		Optional<Pizza> res=PizzaRepository.findById(id);
 		if (res.isPresent()) 
 			return new ResponseEntity<Pizza>(res.get(), HttpStatus.OK);
